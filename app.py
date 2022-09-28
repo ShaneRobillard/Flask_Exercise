@@ -5,7 +5,7 @@ import datetime
 
 app = Flask(__name__)
 global studentOrganisationDetails
-# Assign default 5 values to studentOrganisationDetails for Application  3.
+# Assign default 5 values to studentOrganisationDetails for Application  3h.
 
 
 @app.get('/')
