@@ -1,10 +1,18 @@
 {% block content %}
+<style>
+    h1{
+    font-size: 100px;
+    }
+    p{
+    font-size: 35px;
+    }
+</style>
 <h1>Home</h1>
 <p>Enter an Integer value: </p>
 <form action="/calculate" method="POST">
     <div>
-        <label for="calculate">Enter number: </label>
-        <input type="text" id="calculate" name="Number">
+        <label for="calculate">Enter Number: </label>
+        <input type="text" id="calculate" name="number">
         <button type="submit">Submit</button>
     </div>
 </form>

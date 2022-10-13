@@ -6,7 +6,7 @@ import datetime
 app = Flask(__name__)
 global studentOrganisationDetails
 # Assign default 5 values to studentOrganisationDetails for Application  3h.
-studentOrganisationDetails = ["John Smith","Brad Apple","Roger Tucker","Dominic Steve","Samanatha Carter"]
+studentOrganisationDetails = {"John Smith":"Army","Brad Apple":"Navy","Roger Tucker":"Marines","Dominic Steve":"Air Force","Samanatha Carter":"Coast Guard"}
 
 @app.get('/')
 def index():
@@ -31,7 +31,7 @@ def checkNumber():
     elif int(number) % 2 != 0:
         calculate = "Number " + number + " is odd!"
     if len(number) == 0:
-          calculate = "No number provided."  
+          calculate = "No number provided."
         
     return render_template('result.html', calculate=calculate)
 
@@ -46,7 +46,8 @@ def displayStudentForm():
 def displayRegistrationPage():
     # Get student name and organisation from form.
     studentName = request.form['student']
-    studentOrganisationDetails.append(studentName)
+    organization = request.form['organization']
+    studentOrganisationDetails[studentName]=organization
     # Append this value to studentOrganisationDetails
     return render_template('StudentDetails.html', studentOrganisationDetails=studentOrganisationDetails)
     # Display studentDetails.html with all students and organisations

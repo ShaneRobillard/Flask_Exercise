@@ -1,11 +1,23 @@
 {% block content %}
+<style>
+    h1{
+        font-size: xx-large;
+    }
+</style>
 <h1>Register</h1>
 <h4>Enter Student Information below</h4>
-<!--Form to request user's name-->
 <form action="/addStudentOrganisation" method="POST">
     <div>
         <label for="student">Enter Student Name: </label>
         <input type="text" id="student" name="student">
+        <label for="organization">Enter Organization: </label>
+        <select name="organization" id="organization">
+            <option value="Air Force">Air Force</option>
+            <option value="Army">Army</option>
+            <option value="Coast Guard">Coast Guard</option>
+            <option value="Marines">Marines</option>
+            <option value="Navy">Navy</option>
+          </select>
         <button type="submit">Submit</button>
     </div>
 </form>
